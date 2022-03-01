@@ -11,6 +11,10 @@ const HeaderWrapper = styled.header(({ theme }:ThemeProps) => `
   padding: 16px;
   position: relative;
 
+  h1 {
+    display: inline-block;
+  }
+
   .brand-logo {
     display: inline-block;
     width: 32px;
@@ -96,12 +100,14 @@ const Header = () => {
   const user = useSelector((s:GlobalState) => s.authenticatedUser)
   return (
       <HeaderWrapper>
+      <h1>
       <Link href="/">
         <a>
           <Image className="brand-logo" width="32" height="32" src="/icons/nextjs.png" alt="Brand Logo" />
           <span className="brand-name">NextJS Template</span>
         </a>
       </Link>
+      </h1>
       <span className="theme-switch">
         <ThemeSwitch />
       </span>
