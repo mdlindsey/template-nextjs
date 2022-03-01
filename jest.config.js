@@ -31,7 +31,6 @@ const customJestConfig = {
 
     // Handle module aliases
     '^~/(.*)$': '<rootDir>/$1',
-    '^@/components/(.*)$': '<rootDir>/components/$1',
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   transform: {
