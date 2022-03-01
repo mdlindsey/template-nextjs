@@ -7,8 +7,6 @@ import { saveState, PERSIST_REDUX } from './persist'
 export interface User {
     email: string
     username: string
-    avatarUrl?: string
-    vendorProfiles?: any[]
 }
 
 export enum ColorScheme {

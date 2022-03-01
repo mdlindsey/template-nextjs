@@ -1,5 +1,7 @@
+import Head from 'next/head'
 import { FC, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { AppContext, AppInitialProps, AppProps } from 'next/app'
 import { ColorScheme, GlobalState, PageContext, reduxWrapper } from '~/store'
@@ -8,7 +10,6 @@ import { pageView } from '~/tracking/google'
 import { GlobalStyle } from '~/styles/global'
 import { CustomFonts } from '~/styles/fonts'
 import { DarkTheme, LightTheme } from '~/styles/theme'
-import { useSelector } from 'react-redux'
 
 export type CustomApp = FC<AppProps> & {
   getInitialProps(ctx:AppContext):Promise<AppInitialProps>
@@ -35,6 +36,9 @@ const App:CustomApp = ({ Component, pageProps }) => {
 
   return (
     <ThemeProvider theme={colorScheme === ColorScheme.Light ? LightTheme : DarkTheme}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <CustomFonts />
       <GlobalStyle />
       <Component {...pageProps} />

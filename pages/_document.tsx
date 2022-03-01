@@ -35,7 +35,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           { /* Preload fonts */ }
           <link rel="preload" href="/fonts/Roboto-Bold.ttf" type="font/ttf" as="font" crossOrigin="anonymous" />
           <link rel="preload" href="/fonts/Roboto-Regular.ttf" type="font/ttf" as="font" crossOrigin="anonymous" />

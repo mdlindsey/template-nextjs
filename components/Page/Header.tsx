@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 import { GlobalState } from '~/store'
 import { ThemeProps } from '~/styles/theme'
 import ThemeSwitch from '../ThemeSwitch'
-import UserAvatar from '../UserAvatar'
 
 const HeaderWrapper = styled.header(({ theme }:ThemeProps) => `
   padding: 16px;
@@ -71,28 +70,17 @@ const GuestAccountNav = () => {
   )
 }
 
-const UserAccountNavWrapper = styled.div`
-  .username {
-    position: relative;
-    top: 2px;
-    padding: 8px;
-  }
-`
-const UserAccountNav = ({ username, avatarUrl }) => {
+const UserAccountNav = ({ username }) => {
   return (
-    <UserAccountNavWrapper>
+    <>
       <Link href="/me">
-        <a>
-          <UserAvatar url={avatarUrl} username={username} />
-          <span className="username">{username}</span>
-        </a>
+        <a>{ username }</a>
       </Link>
       <Divider />
       <Link href="/logout">
         <a>Logout</a>
       </Link>
-      
-    </UserAccountNavWrapper>
+    </>
   )
 }
 
@@ -115,7 +103,7 @@ const Header = () => {
         {
           !user
             ? <GuestAccountNav />
-            : <UserAccountNav username={user.username} avatarUrl={user.avatarUrl} /> 
+            : <UserAccountNav username={user.username} /> 
         }
       </nav>
       </HeaderWrapper>
