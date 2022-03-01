@@ -1,9 +1,9 @@
-import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import Page from '~/components/Page'
+import { useSelector } from 'react-redux'
 import { useDispatcher, useMedia } from '~/hooks'
 import { ColorScheme, GlobalState } from '~/store'
 import { ThemeProps } from '~/styles/theme'
+import Page from '~/components/Page'
 
 const Wrapper = styled.div`
   position: relative;
@@ -42,8 +42,7 @@ const IndexPage = () => {
       setJwt('<jwt>')
       setUser({
         email: 'dev@example.com',
-        username: 'JustAnotherDev',
-        // avatarUrl: 'https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/user.png'
+        username: 'JustAnotherDev'
       })
     }
   }
